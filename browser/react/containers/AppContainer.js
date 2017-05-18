@@ -24,6 +24,7 @@ export default class AppContainer extends Component {
     this.selectAlbum = this.selectAlbum.bind(this);
     this.selectArtist = this.selectArtist.bind(this);
     this.selectPlaylist = this.selectPlaylist.bind(this);
+    this.createPlaylist = this.createPlaylist.bind(this);
   }
 
   componentDidMount () {
