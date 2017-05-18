@@ -8,6 +8,7 @@ export default class FilterableArtistsContainer extends React.Component {
     this.state = {
       inputValue: ''
     }
+  this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange (evt) {
