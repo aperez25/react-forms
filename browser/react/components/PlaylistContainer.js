@@ -18,9 +18,6 @@ class PlaylistInput extends React.Component {
   handleSubmit(evt) {
     evt.preventDefault();
     this.createPlaylist();
-    this.setState({
-      playlistValue: ''
-    })
   }
 
   createPlaylist() {
@@ -28,6 +25,9 @@ class PlaylistInput extends React.Component {
       .then(res => res.data)
       .then(result => {
         console.log(result)
+        this.setState({
+          playlistValue: ''
+        })
       })
       .catch(console.error.bind(console));
     }
