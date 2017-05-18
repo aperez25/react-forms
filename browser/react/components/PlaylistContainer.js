@@ -1,6 +1,5 @@
 import React from 'react';
 import NewPlaylist from './NewPlaylist';
-import axios from 'axios';
 
 class PlaylistInput extends React.Component {
   constructor(props) {
@@ -12,25 +11,17 @@ class PlaylistInput extends React.Component {
   this.handleSubmit = this.handleSubmit.bind(this)
   this.handleChange = this.handleChange.bind(this)
   this.buttonBool = this.buttonBool.bind(this)
-  this.createPlaylist = this.createPlaylist.bind(this)
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.createPlaylist();
+    const createPlaylist = this.props.createPlaylist;
+    createPlaylist(this.state.playlistValue);
+    this.setState({
+      playlistValue: ''
+    })
   }
 
-  createPlaylist() {
-    axios.post('/api/playlists', { name: this.state.playlistValue })
-      .then(res => res.data)
-      .then(result => {
-        console.log(result)
-        this.setState({
-          playlistValue: ''
-        })
-      })
-      .catch(console.error.bind(console));
-    }
 
   buttonBool(evt) {
     if (evt.target.value.length === 0 || evt.target.value.length > 17) {
