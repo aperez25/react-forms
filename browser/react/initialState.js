@@ -8,8 +8,7 @@ const initialState = {
   isPlaying: false,
   progress: 0,
   inputValue: '',
-  playlistValue: '',
-  buttonActive: true
+  playlistValue: ''
 };
 
 export default initialState;
