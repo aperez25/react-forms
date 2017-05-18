@@ -12,14 +12,25 @@ class PlaylistInput extends React.Component {
   this.handleSubmit = this.handleSubmit.bind(this)
   this.handleChange = this.handleChange.bind(this)
   this.buttonBool = this.buttonBool.bind(this)
+  this.createPlaylist = this.createPlaylist.bind(this)
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
+    this.createPlaylist();
     this.setState({
       playlistValue: ''
     })
   }
+
+  createPlaylist() {
+    axios.post('/api/playlists', { name: this.state.playlistValue })
+      .then(res => res.data)
+      .then(result => {
+        console.log(result)
+      })
+      .catch(console.error.bind(console));
+    }
 
   buttonBool(evt) {
     if (evt.target.value.length === 0 || evt.target.value.length > 17) {
