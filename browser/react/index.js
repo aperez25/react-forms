@@ -4,12 +4,10 @@ import { Router, Route, hashHistory, IndexRedirect } from 'react-router';
 import AppContainer from './containers/AppContainer';
 import Albums from './components/Albums';
 import Album from './components/Album';
-import Artists from './components/Artists';
 import Artist from './components/Artist';
 import Songs from './components/Songs';
 import FilterableArtistsContainer from './components/FilterableArtistsContainer';
 import PlaylistContainer from './components/PlaylistContainer';
-import NewPlaylist from './components/NewPlaylist';
 import Playlist from './components/Playlist'
 
 ReactDOM.render(
@@ -25,7 +23,7 @@ ReactDOM.render(
       <Route path="/playlists/:playlistId" component ={ Playlist } />
 
       </Route>
-      <IndexRedirect to='/albums' />
+      <IndexRedirect to="/albums" />
     </Route>
   </Router>,
   document.getElementById('app')

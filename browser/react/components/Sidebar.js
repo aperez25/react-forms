@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import NewPlaylist from './NewPlaylist'
 
 const Sidebar = (props) => {
 
@@ -34,8 +33,8 @@ const Sidebar = (props) => {
           {
             playlists.map(playlist => {
               return (
-                <li key={playlist.id}className="playlist-item menu-item">
-                  <Link to={`/playlists/${playlist.id}`}>{playlist.name }</Link>
+                <li key={playlist.id} className="playlist-item menu-item">
+                  <Link to={`/playlists/${playlist.id}`}>{ playlist.name }</Link>
                 </li>
               )
             })

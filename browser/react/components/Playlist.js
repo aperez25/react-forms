@@ -12,6 +12,11 @@ export default class Playlist extends React.Component {
     const selectPlaylist = this.props.selectPlaylist;
     selectPlaylist(playlistId);
   }
+
+  // componentWillReceiveProps() {
+
+  // }
+
   render () {
     const playlist = this.props.selectedPlaylist;
 

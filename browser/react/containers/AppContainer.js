@@ -3,9 +3,6 @@ import axios from 'axios';
 
 import initialState from '../initialState';
 import AUDIO from '../audio';
-
-import Albums from '../components/Albums.js';
-import Album from '../components/Album';
 import Sidebar from '../components/Sidebar';
 import Player from '../components/Player';
 
@@ -16,7 +13,6 @@ export default class AppContainer extends Component {
   constructor (props) {
     super(props);
     this.state = initialState;
-
     this.toggle = this.toggle.bind(this);
     this.toggleOne = this.toggleOne.bind(this);
     this.next = this.next.bind(this);
@@ -158,7 +154,7 @@ export default class AppContainer extends Component {
       selectAlbum: this.selectAlbum,
       selectArtist: this.selectArtist,
       createPlaylist: this.createPlaylist,
-      selectPlaylist: this.selectPlaylist
+      selectPlaylist: this.selectPlaylist,
     });
 
     return (
